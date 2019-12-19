@@ -1,0 +1,55 @@
+body {
+    text-align: center;
+}
+
+/* FONT SPECIFICS */
+
+h1,
+h2,
+h3,
+a {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3 {
+    color: #0d2c40;
+}
+
+h2,
+h3,
+a {
+    font-weight: 600;
+}
+
+a,
+p {
+    font-size: 18px;
+}
+
+
+h1 {
+    font-weight: 400;
+    font-size: 45px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: #f15b31;
+}
+
+p {
+    font-family: 'Droid Serif', sans-serif;
+    line-height: 26px;
+}
