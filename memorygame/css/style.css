@@ -1,13 +1,11 @@
 /* TAG SPECIFICS */
-body
-{
+body {
     margin: 0;
 
     text-align: center;
 }
 
-header
-{
+header {
     position: left;
 
     padding: 30px 20px;
@@ -16,35 +14,30 @@ header
     background-color: #f15b31;
 }
 
-nav
-{
+nav {
     padding: 20px 0;
 
     color: #fff;
     background-color: #00a6b3;
 }
 
-nav a
-{
+nav a {
     margin: 0 20px;
 
     color: #fff;
     border-bottom: 2px solid transparent;
 }
 
-nav a:hover
-{
+nav a:hover {
     border-bottom-color: #fff;
 }
 
-main
-{
+main {
     width: 850px;
     margin: 35px auto;
 }
 
-footer
-{
+footer {
     font-size: 14px;
     font-weight: 500;
 
@@ -57,8 +50,7 @@ footer
     background-color: #0d2c40;
 }
 
-img
-{
+img {
     margin: 40px 8px;
 }
 
@@ -67,8 +59,7 @@ img
 h1,
 h2,
 h3,
-a
-{
+a {
     font-family: 'Raleway', sans-serif;
 
     letter-spacing: 1px;
@@ -77,52 +68,44 @@ a
 
 h1,
 h2,
-h3
-{
+h3 {
     color: #0d2c40;
 }
 
 h2,
 h3,
-a
-{
+a {
     font-weight: 600;
 }
 
 a,
-p
-{
+p {
     font-size: 18px;
 }
 
 
-h1
-{
+h1 {
     font-size: 45px;
     font-weight: 400;
 
     margin: 0;
 }
 
-h2
-{
+h2 {
     font-size: 20px;
 }
 
-h3
-{
+h3 {
     font-size: 16px;
 }
 
-a
-{
+a {
     text-decoration: none;
 
     color: #f15b31;
 }
 
-p
-{
+p {
     font-family: 'Droid Serif', sans-serif;
     line-height: 26px;
 }
@@ -131,31 +114,26 @@ p
 /* CLASS SPECIFICS */
 
 .copyright,
-.message
-{
+.message {
     font-family: 'Raleway', sans-serif;
 }
 
-.copyright
-{
+.copyright {
     float: left;
 }
 
-.message
-{
+.message {
     float: right;
 }
 
-.name
-{
+.name {
     font-weight: 700;
 
     color: #f15b31;
 }
 
 /* CLEARFIX */
-.cleafix:after
-{
+.cleafix:after {
     font-size: 0;
 
     display: block;
