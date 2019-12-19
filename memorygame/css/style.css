@@ -1,7 +1,8 @@
 /* TAG SPECIFICS */
 body
 {
-margin: 0;
+    margin: 0;
+
     text-align: center;
 }
 
@@ -28,6 +29,37 @@ nav a
     margin: 0 20px;
 
     color: #fff;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover
+{
+    border-bottom-color: #fff;
+}
+
+main
+{
+    width: 850px;
+    margin: 35px auto;
+}
+
+footer
+{
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 20px 0;
+
+    letter-spacing: .08em;
+    text-transform: uppercase;
+
+    color: white;
+    background-color: #0d2c40;
+}
+
+img
+{
+    margin: 40px 8px;
 }
 
 /* FONT SPECIFICS */
@@ -93,4 +125,44 @@ p
 {
     font-family: 'Droid Serif', sans-serif;
     line-height: 26px;
+}
+
+
+/* CLASS SPECIFICS */
+
+.copyright,
+.message
+{
+    font-family: 'Raleway', sans-serif;
+}
+
+.copyright
+{
+    float: left;
+}
+
+.message
+{
+    float: right;
+}
+
+.name
+{
+    font-weight: 700;
+
+    color: #f15b31;
+}
+
+/* CLEARFIX */
+.cleafix:after
+{
+    font-size: 0;
+
+    display: block;
+    visibility: hidden;
+    clear: both;
+
+    height: 0;
+
+    content: '';
 }
