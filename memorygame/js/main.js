@@ -1,66 +1,65 @@
-let cards = [{
-        rank: 'queen',
-        suit: 'hearts',
-        cardImage: 'images/queen-of-hearts.png'
-    },
-    {
-        rank: 'queen',
-        suit: 'diamonds',
-        cardImage: 'images/queen-of-diamonds.png'
-    },
-    {
-        rank: 'king',
-        suit: 'hearts',
-        cardImage: 'images/king-of-hearts.png'
-    },
-    {
-        rank: 'king',
-        suit: 'diamonds',
-        cardImage: 'images/king-of-diamonds.png'
-    }
-];
-
-let selectedCards = [];
-
-const setInitialBoard = () => {
-    cards.forEach(e => { $('#game-board').append('<img src="images/back.png" alt="Back of Cards" />'); });
-    clickTheCard();
-}
-
-const clickTheCard = () => {
-    $('img').on('click', e => {
-
-        let randomIndex = randomNumber(cards);
-
-        $(e.currentTarget).attr({
-            src: cards[randomIndex].cardImage,
-            alt: cards[randomIndex].rank + ' of ' + cards[randomIndex].suit
+const memoryGame = {
+    cards: [{
+            rank: 'queen',
+            suit: 'hearts',
+            cardImage: 'images/queen-of-hearts.png'
+        },
+        {
+            rank: 'queen',
+            suit: 'diamonds',
+            cardImage: 'images/queen-of-diamonds.png'
+        },
+        {
+            rank: 'king',
+            suit: 'hearts',
+            cardImage: 'images/king-of-hearts.png'
+        },
+        {
+            rank: 'king',
+            suit: 'diamonds',
+            cardImage: 'images/king-of-diamonds.png'
+        }
+    ],
+    selectedCards: [],
+    setTheBoard: gameDeck => {
+        gameDeck.forEach(function() {
+            $('#game-board').append('<img src="images/back.png" alt="Back of Cards" />');
         });
+        memoryGame.clickTheCard();
+        return;
+    },
+    clickTheCard: () => {
+        $('img').on('click', e => {
 
-        selectedCards.push(cards[randomIndex]);
-        cards.splice(randomIndex, 1);
+            let randomIndex = memoryGame.randomNumber(memoryGame.cards);
 
-        checkTheChoices();
-        console.log(e.currentTarget)
-    });
-}
+            $(e.currentTarget).attr({
+                src: memoryGame.cards[randomIndex].cardImage,
+                alt: memoryGame.cards[randomIndex].rank + ' of ' + memoryGame.cards[randomIndex].suit
+            });
 
-const checkTheChoices = () => {
-    if (selectedCards.length === 2) {
-        selectedCards[0].rank === selectedCards[1].rank ? alert('You found the card!') : alert('Sorry, try again.');
+            memoryGame.selectedCards.push(memoryGame.cards[randomIndex]);
+            memoryGame.cards.splice(randomIndex, 1);
 
-        setTimeout(function() { location.reload(); }, 750)
+            memoryGame.checkTheChoices();
+        });
+    },
+    checkTheChoices: () => {
+        if (memoryGame.selectedCards.length === 2) {
+            memoryGame.selectedCards[0].rank === memoryGame.selectedCards[1].rank ? alert('You found the card!') : alert('Sorry, try again.');
+
+            setTimeout(function() { location.reload(); }, 750)
+        }
+    },
+    randomNumber: arr => {
+        return Math.floor(Math.random() * Math.floor(arr.length));
+    },
+    runApp: () => {
+        memoryGame.setTheBoard(memoryGame.cards);
+
     }
-}
-
-const randomNumber = (arr) => {
-    return Math.floor(Math.random() * Math.floor(arr.length));
-}
-
-const app = () => {
-    setInitialBoard();
 }
 
 $(() => {
-    app();
+    memoryGame.runApp();
 });
