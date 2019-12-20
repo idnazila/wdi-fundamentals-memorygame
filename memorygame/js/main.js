@@ -24,12 +24,14 @@ let selectedCards = [];
 
 const initialBoardSet = () => {
     cards.forEach(e => {
-        $('#game-board').append('<img src="images/back.png" alt="Back of Cards" />');
+        let image = '<img src="images/back.png" alt="Back of Cards" />';
+        $('#game-board').append(image);
     });
 }
 
 const clickTheCard = () => {
     $('img').on('click', function() {
+
         let randomIndex = selectRandomCard();
         let newSource = cards[randomIndex].cardImage;
         let newAlt = cards[randomIndex].rank + ' of ' + cards[randomIndex].suit;
@@ -66,6 +68,6 @@ const runApp = () => {
     clickTheCard();
 }
 
-$(document).ready(function() {
+$(() => {
     runApp();
 });
