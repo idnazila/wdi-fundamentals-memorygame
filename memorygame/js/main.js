@@ -23,9 +23,9 @@ let cards = [{
 let selectedCards = [];
 
 const initialBoardSet = () => {
-    for (let i = 0; i < cards.length; i++) {
+    cards.forEach(e => {
         $('#game-board').append('<img src="images/back.png" alt="Back of Cards" />');
-    }
+    });
 }
 
 const clickTheCard = () => {
