@@ -1,5 +1,6 @@
 /* TAG SPECIFICS */
-body {
+body,
+h1 {
     margin: 0;
 
     text-align: center;
@@ -10,22 +11,25 @@ header {
 
     padding: 30px 20px;
 
-    color: #fff;
     background-color: #f15b31;
 }
 
 nav {
     padding: 20px 0;
 
-    color: #fff;
     background-color: #00a6b3;
 }
 
 nav a {
     margin: 0 20px;
 
-    color: #fff;
     border-bottom: 2px solid transparent;
+}
+
+header,
+nav,
+nav a {
+    color: #fff;
 }
 
 nav a:hover {
@@ -48,7 +52,6 @@ footer {
     width: 100%;
 
     letter-spacing: .08em;
-    text-transform: uppercase;
 
     color: white;
     background-color: #0d2c40;
@@ -67,11 +70,25 @@ img {
 h1,
 h2,
 h3,
-a {
+a,
+.copyright,
+.message {
     font-family: 'Raleway', sans-serif;
+}
 
-    letter-spacing: 1px;
+h1,
+h2,
+h3,
+a,
+footer {
     text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+a {
+    letter-spacing: 1px;
 }
 
 h1,
@@ -95,8 +112,6 @@ p {
 h1 {
     font-size: 45px;
     font-weight: 400;
-
-    margin: 0;
 }
 
 h2 {
@@ -107,10 +122,13 @@ h3 {
     font-size: 16px;
 }
 
+a,
+.name {
+    color: #f15b31;
+}
+
 a {
     text-decoration: none;
-
-    color: #f15b31;
 }
 
 p {
@@ -120,11 +138,6 @@ p {
 
 
 /* CLASS SPECIFICS */
-
-.copyright,
-.message {
-    font-family: 'Raleway', sans-serif;
-}
 
 .copyright {
     float: left;
@@ -136,8 +149,6 @@ p {
 
 .name {
     font-weight: 700;
-
-    color: #f15b31;
 }
 
 /* CLEARFIX */
