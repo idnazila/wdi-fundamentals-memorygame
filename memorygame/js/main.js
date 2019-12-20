@@ -56,7 +56,6 @@ const memoryGame = {
     },
     runApp: () => {
         memoryGame.setTheBoard(memoryGame.cards);
-
     }
 }
 
