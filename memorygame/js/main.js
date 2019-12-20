@@ -52,7 +52,7 @@ const checkTheChoices = () => {
         } else {
             alert('Sorry, try again.');
         }
-        location.reload();
+        setTimeout(function() { location.reload(); }, 750)
     }
 }
 
