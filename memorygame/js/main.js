@@ -20,22 +20,52 @@ let cards = [{
     }
 ];
 
-let cardsInPlay = [];
+let selectedCards = [];
 
-const checkForMatch = () => {
-    if (cardsInPlay[0] === cardsInPlay[1]) {
-        console.log("You found a match!");
-    } else {
-        console.log('Sorry, try again.');
+const initialBoardSet = () => {
+    for (let i = 0; i < cards.length; i++) {
+        $('#game-board').append('<img src="images/back.png" alt="Back of Cards" />');
     }
 }
 
-const flipCard = cardId => {
-    checkForMatch();
-    console.log("User flipped " + cards[cardId].rank);
-    console.log(cards[cardId].cardImage);
-    console.log(cards[cardId].suit);
-    cardsInPlay.push(cards[cardId].rank);
+const clickTheCard = () => {
+    $('img').on('click', function() {
+        let randomIndex = selectRandomCard();
+        let newSource = cards[randomIndex].cardImage;
+        let newAlt = cards[randomIndex].rank + ' of ' + cards[randomIndex].suit;
+
+        $(this).attr('src', newSource);
+        $(this).attr('alt', newAlt);
+
+        selectedCards.push(cards[randomIndex]);
+        cards.splice(randomIndex, 1);
+
+        checkTheChoices();
+    });
 }
 
-flipCard(1);
+const checkTheChoices = () => {
+    if (selectedCards.length === 2) {
+        if (selectedCards[0].rank === selectedCards[1].rank) {
+            alert('You found the card!');
+
+        } else {
+            alert('Sorry, try again.');
+        }
+        location.reload();
+    }
+}
+
+const selectRandomCard = () => {
+    let randomIndex = Math.floor(Math.random() * Math.floor(cards.length));
+    return randomIndex;
+}
+
+const runApp = () => {
+    initialBoardSet();
+    clickTheCard();
+}
+
+$(() => {
+    runApp();
+});
