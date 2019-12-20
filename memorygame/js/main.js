@@ -28,17 +28,20 @@ const setInitialBoard = () => {
 }
 
 const clickTheCard = () => {
-    $('img').on('click', function() {
+    $('img').on('click', e => {
 
         let randomIndex = randomNumber();
 
-        $(this).attr('src', cards[randomIndex].cardImage);
-        $(this).attr('alt', cards[randomIndex].rank + ' of ' + cards[randomIndex].suit);
+        $(e.currentTarget).attr({
+            src: cards[randomIndex].cardImage,
+            alt: cards[randomIndex].rank + ' of ' + cards[randomIndex].suit
+        });
 
         selectedCards.push(cards[randomIndex]);
         cards.splice(randomIndex, 1);
 
         checkTheChoices();
+        console.log(e.currentTarget)
     });
 }
 
