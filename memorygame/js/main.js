@@ -22,22 +22,18 @@ let cards = [{
 
 let selectedCards = [];
 
-const initialBoardSet = () => {
-    cards.forEach(e => {
-        let image = '<img src="images/back.png" alt="Back of Cards" />';
-        $('#game-board').append(image);
-    });
+const setInitialBoard = () => {
+    cards.forEach(e => { $('#game-board').append('<img src="images/back.png" alt="Back of Cards" />'); });
+    clickTheCard();
 }
 
 const clickTheCard = () => {
     $('img').on('click', function() {
 
-        let randomIndex = selectRandomCard();
-        let newSource = cards[randomIndex].cardImage;
-        let newAlt = cards[randomIndex].rank + ' of ' + cards[randomIndex].suit;
+        let randomIndex = randomNumber();
 
-        $(this).attr('src', newSource);
-        $(this).attr('alt', newAlt);
+        $(this).attr('src', cards[randomIndex].cardImage);
+        $(this).attr('alt', cards[randomIndex].rank + ' of ' + cards[randomIndex].suit);
 
         selectedCards.push(cards[randomIndex]);
         cards.splice(randomIndex, 1);
@@ -48,26 +44,20 @@ const clickTheCard = () => {
 
 const checkTheChoices = () => {
     if (selectedCards.length === 2) {
-        if (selectedCards[0].rank === selectedCards[1].rank) {
-            alert('You found the card!');
+        selectedCards[0].rank === selectedCards[1].rank ? alert('You found the card!') : alert('Sorry, try again.');
 
-        } else {
-            alert('Sorry, try again.');
-        }
         setTimeout(function() { location.reload(); }, 750)
     }
 }
 
-const selectRandomCard = () => {
-    let randomIndex = Math.floor(Math.random() * Math.floor(cards.length));
-    return randomIndex;
+const randomNumber = () => {
+    return Math.floor(Math.random() * Math.floor(cards.length));
 }
 
-const runApp = () => {
-    initialBoardSet();
-    clickTheCard();
+const app = () => {
+    setInitialBoard();
 }
 
 $(() => {
-    runApp();
+    app();
 });
