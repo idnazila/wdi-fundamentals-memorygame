@@ -30,7 +30,7 @@ const setInitialBoard = () => {
 const clickTheCard = () => {
     $('img').on('click', e => {
 
-        let randomIndex = randomNumber();
+        let randomIndex = randomNumber(cards);
 
         $(e.currentTarget).attr({
             src: cards[randomIndex].cardImage,
@@ -53,8 +53,8 @@ const checkTheChoices = () => {
     }
 }
 
-const randomNumber = () => {
-    return Math.floor(Math.random() * Math.floor(cards.length));
+const randomNumber = (arr) => {
+    return Math.floor(Math.random() * Math.floor(arr.length));
 }
 
 const app = () => {
