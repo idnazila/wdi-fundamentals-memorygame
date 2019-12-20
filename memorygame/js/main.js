@@ -66,6 +66,6 @@ const runApp = () => {
     clickTheCard();
 }
 
-$(() => {
+$(document).ready(function() {
     runApp();
 });
